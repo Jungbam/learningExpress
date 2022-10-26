@@ -1,16 +1,1 @@
-[
-  {
-    "name": "dd",
-    "address": "dd",
-    "cuisine": "dd",
-    "website": "https://dsfsdf.com",
-    "description": "dd"
-  },
-  {
-    "name": "ㅇㅇㅇㅇ",
-    "address": "ㅇㅇㅇㅇ",
-    "cuisine": "ㅇㅇㅇ",
-    "website": "https://dsfsdf.com",
-    "description": "ddd"
-  }
-]
+[{"name":"dd","address":"dd","cuisine":"dd","website":"https://dsfsdf.com","description":"dd"},{"name":"ㅇㅇㅇㅇ","address":"ㅇㅇㅇㅇ","cuisine":"ㅇㅇㅇ","website":"https://dsfsdf.com","description":"ddd"},{"name":"ddd","address":"ddd","cuisine":"dd","website":"https://dsfsdf.com","description":"ddd"}]

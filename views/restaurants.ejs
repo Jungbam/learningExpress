@@ -50,22 +50,26 @@
     <main>
       <h1>음식점 찾아보기</h1>
       <p>혹시 당신의 인생맛집을 찾을지도 몰라요. Look that!</p>
+      <!--ejs 문법으로 동적인 값 전달하기-->
+      <p>등록된 전국 맛집 갯수 : <%= restaurantsNum %></p>
       <ul id="restaurants-list">
+        <% for ( const restaurant of restaurants){ %>
         <li class="restaurant-item">
-          <!-- <article>
-            <h2>Restaurant Title</h2>
+          <article>
+            <h2><%= restaurant.name%></h2>
             <div class="restaurant-meta">
-              <p>Mexican</p>
-              <p>Address of the restaurant, including city</p>
+              <p><%= restaurant.cuisin%></p>
+              <p><%= restaurant.adress%></p>
             </div>
             <p>
-              A short description, explaining why this restaurant is awesome!
+              <%= restaurant.description%>
             </p>
             <div class="restaurant-actions">
-              <a href="">View Website</a>
+              <a href="<%= restaurant.website%>">음식점 사이트</a>
             </div>
-          </article> -->
+          </article>
         </li>
+        <% } %>
       </ul>
     </main>
   </body>
