@@ -4,6 +4,8 @@ const express = require('express')
 // app을 express 기반 객체로 만듬. -> express 내에 있는 함수들을 사용이 가능해짐.
 const app = express()
 
+// 참조되는 이미지, 파일 등의 기본 경로를 지정해주는 역할 .use(express.static(기본 경로가 될 파일명))
+app.use(express.static('public'))
 // path를 불러와서 path.join을 통해 경로를 할당해주고 그 경로를 통해 해당 파일을 응답으로 보내준다.
 // 보내주는 것 : sendFile()
 
