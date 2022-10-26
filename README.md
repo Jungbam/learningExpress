@@ -29,5 +29,6 @@ Express 공부해서 custom 서버 만들기
                 동적인 부분을 body에서 파싱할 때에는 기본으로 app.use(express.urlencoded({extended : false})를 한다.
                 
                 ☞ 해당내용에 대한 추가 설명
+![image](https://user-images.githubusercontent.com/108196588/197980719-ae3aed4b-b873-430e-9036-c1749719c40b.png)
                 
-                ![image](https://user-images.githubusercontent.com/108196588/197980272-5e4017f7-543e-4062-8357-15b591dfc6ea.png)
+ 
