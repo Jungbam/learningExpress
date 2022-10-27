@@ -72,3 +72,11 @@ Express 공부해서 custom 서버 만들기
   - ejs로 동적인 props 하달하기
   ![image](https://user-images.githubusercontent.com/108196588/198204845-e18b4d8c-fb51-431e-aabf-5a5011a288e0.png)
 
+  - 상세페이지 만들었더니 발생한 문제 : 또 다시 경로문제 발생
+    ![image](https://user-images.githubusercontent.com/108196588/198220171-eca0de26-f423-4f5d-ad37-5cbc222c1375.png)
+    
+    ☞ 해결방법 : 경로를 다시 지정
+    ![image](https://user-images.githubusercontent.com/108196588/198220375-4a0d7db0-ad64-4eb1-9890-e2afd52a4706.png)
+    ![image](https://user-images.githubusercontent.com/108196588/198220435-12617a04-8646-4705-b1b1-29b78cd2b0e1.png)
+
+
