@@ -73,8 +73,8 @@ app.get('/restaurants', function (req, res) {
 // get() 안에 동적인 url값을 할당하기 => 동적인 페이지 변환
 app.get('/restaurants/:id', function (req, res) {
   // url에서 : 뒤에 적은 값들이 들어감.
-  const restaurantId = req.params.id
-  res.render('restaurant-detail', { rid: restaurantId })
+  const restaurant = req.body
+  res.render('restaurant-detail', { rid: restaurant })
 })
 
 // 특정포트에서 들어오는 네트워크 트래픽을 감지하게 됨.
