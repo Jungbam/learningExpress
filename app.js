@@ -1,6 +1,8 @@
 const path = require('path')
 const fs = require('fs')
 const express = require('express')
+const uuid = require('uuid')
+console.log(uuid.v4)
 
 // app을 express 기반 객체로 만듬. -> express 내에 있는 함수들을 사용이 가능해짐.
 const app = express()
@@ -38,6 +40,7 @@ app.get('/about', function (req, res) {
 app.post('/recommend', function (req, res) {
   // json 파일에 입력받을 배열이 있는지 확인 필요!!
   const restaurant = req.body
+  restaurant.id = uuid.v4()
   const filePath = path.join(__dirname, 'data', 'restaurants.json')
 
   const fileData = fs.readFileSync(filePath)
@@ -65,6 +68,13 @@ app.get('/restaurants', function (req, res) {
     restaurantsNum: storedRestaurants.length,
     restaurants: storedRestaurants,
   })
+})
+
+// get() 안에 동적인 url값을 할당하기 => 동적인 페이지 변환
+app.get('/restaurants/:id', function (req, res) {
+  // url에서 : 뒤에 적은 값들이 들어감.
+  const restaurantId = req.params.id
+  res.render('restaurant-detail', { rid: restaurantId })
 })
 
 // 특정포트에서 들어오는 네트워크 트래픽을 감지하게 됨.

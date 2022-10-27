@@ -1,30 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    
     <%- include('includes/head') %> 
-    <link rel="stylesheet" href="styles/restaurants.css" />
+    <link rel="stylesheet" href="/styles/restaurants.css" />
   </head>
   <body>
     <%- include('includes/header') %> 
     <%- include('includes/aside') %> 
     <main>
-      <h1>음식점 찾아보기</h1>
-      <% if(restaurantsNum ===0){ %>
-        <p>
-          아직 등록된 음식점이 없어요.
-        </p>
-        <% }else { %>
-          <p>혹시 당신의 인생맛집을 찾을지도 몰라요. Look that!</p>
-          <!--ejs 문법으로 동적인 값 전달하기-->
-          <p>등록된 전국 맛집 갯수 : <%= restaurantsNum %></p>
-          <ul id="restaurants-list">
-            <% for ( const restaurant of restaurants){ %>
-              <!--ejs 문법으로 props 보내주기-->
-              <%- include('includes/restaurants-item', {restaurant : restaurant}) %> 
-        <% } %>
-      </ul>
-          <% } %>
+      <h1>음식점 이름 : <%=rid%></h1>
+      <p>도시 | 주소</p>
+      <p>설명</p>
+      <p><a href="">음식점 사이트</a></p>
     </main>
     <%- include('includes/footer') %> 
   </body>
