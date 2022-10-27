@@ -17,38 +17,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
   </head>
   <body>
-    <header id="main-header">
-      <div id="logo"><a href="/">푸드몰</a></div>
-      <nav>
-        <ul>
-          <li class="nav-item">
-            <a href="/restaurants">음식점 보기</a>
-          </li>
-          <li class="nav-item">
-            <a href="/recommend">맛집 공유하기</a>
-          </li>
-          <li class="nav-item"><a href="/about">About 푸드몰</a></li>
-        </ul>
-      </nav>
-      <button id="drawer-btn">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </header>
-    <aside id="mobile-drawer">
-      <nav>
-        <ul>
-          <li class="nav-item">
-            <a href="/restaurants">음식점 보기</a>
-          </li>
-          <li class="nav-item">
-            <a href="/recommend">맛집 공유하기</a>
-          </li>
-          <li class="nav-item"><a href="/about">About 푸드몰</a></li>
-        </ul>
-      </nav>
-    </aside>
+    <!--일부 html 렌더링하는 기능 : include(a,b) a는 넘기는 ejs 파일 / b는 넘기고 싶은 동적인 값인데 props같은 개념.-->
+    <%- include('includes/header') %> 
+    <%- include('includes/aside') %> 
     <main>
       <section class="box-container">
         <h1>맛집 공유 사이트</h1>
@@ -62,8 +33,6 @@
         </p>
       </section>
     </main>
-    <footer>
-      © 맛집탐방 2022 This site is created by 정호영 Solo Project.
-    </footer>
+    <%- include('includes/footer') %> 
   </body>
 </html>

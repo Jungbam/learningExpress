@@ -17,44 +17,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
   </head>
   <body>
-    <header id="main-header">
-      <div id="logo"><a href="/">푸드몰</a></div>
-      <nav>
-        <ul>
-          <li class="nav-item">
-            <a href="/restaurants">음식점 보기</a>
-          </li>
-          <li class="nav-item">
-            <a href="/recommend">맛집 공유하기</a>
-          </li>
-          <li class="nav-item"><a href="/about">About 푸드몰</a></li>
-        </ul>
-      </nav>
-      <button id="drawer-btn">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </header>
-    <aside id="mobile-drawer">
-      <nav>
-        <ul>
-          <li class="nav-item">
-            <a href="/restaurants">음식점 보기</a>
-          </li>
-          <li class="nav-item">
-            <a href="/recommend">맛집 공유하기</a>
-          </li>
-          <li class="nav-item"><a href="/about">About 푸드몰</a></li>
-        </ul>
-      </nav>
-    </aside>
+    <%- include('includes/header') %> 
+    <%- include('includes/aside') %> 
     <main>
       <h1>등록 성공</h1>
       <p>작성하신 음식점에 대한 추천이 다른분들에게 공유되었습니다.</p>
     </main>
-    <footer>
-      © 맛집탐방 2022 This site is created by 정호영 Solo Project.
-    </footer>
+    <%- include('includes/footer') %> 
   </body>
 </html>
