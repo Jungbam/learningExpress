@@ -5,9 +5,8 @@ main {
   text-align: center;
 }
 
-main h1 {
-  font-family: 'Roboto Condensed', 'Roboto', sans-serif;
-  color: rgb(202, 158, 62);
+main p {
+  font-size: 18px;
 }
 
 main ul {
@@ -29,17 +28,18 @@ main li a {
   height: 100%;
   width: 100%;
   display: flex;
-  background-color: rgb(48, 42, 31);
+  background-color: rgb(185, 234, 255);
   justify-content: center;
   align-items: center;
   text-decoration: none;
-  color: rgb(218, 205, 183);
-  font-size: 1.25rem;
+  color: #222;
+  font-size: 20px;
   padding: 1rem;
   box-sizing: border-box;
+  border: 1px solid rgb(30, 188, 231);
 }
 
 main li a:hover,
 main li a:active {
-  background-color: rgb(100, 81, 43);
+  background-color: rgb(237, 224, 198);
 }

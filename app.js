@@ -12,7 +12,7 @@ app.set('view engine', 'ejs')
 // 참조되는 이미지, 파일 등의 기본 경로를 지정해주는 역할
 // 정적인 부분 : .use(express.static(기본 경로가 될 파일명))
 app.use(express.static('public'))
-// 정적인 부분 : .use(express.urlencoded())
+// 동적인 부분 : .use(express.urlencoded())
 app.use(express.urlencoded({ extended: false }))
 /*urlencoded({extended : })에 대한 설명
   true : 객체 형태로 전달된 데이터내에서 또다른 중첩된 객체를 허용한다
