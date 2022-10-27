@@ -31,4 +31,17 @@ Express 공부해서 custom 서버 만들기
                 ☞ 해당내용에 대한 추가 설명
 ![image](https://user-images.githubusercontent.com/108196588/197980719-ae3aed4b-b873-430e-9036-c1749719c40b.png)
                 
- 
+                  
+  - ejs에서 삼항연산자를 사용하려다가 에러를 만남.
+  ![image](https://user-images.githubusercontent.com/108196588/198182758-60ab31f3-2bbd-45a6-b07b-006e54793d97.png)
+  
+    ★ 무엇이 문제인가 ? 삼항연산자는 표현식을 반환해야하는데 나는 거기에 for문을 작성한것.
+    
+       표현식 vs 값 vs 문을 처음으로 알았다.. 분리된 개념이라는 것을!
+       
+       공부할때 참조 사이트 :  https://intrepidgeeks.com/tutorial/javascript-expression-expression
+       
+    ☞ 결론 : 배열컴퍼넌트를 생성했을 때 .map()을 사용하여 배열을 반환했기 때문에 표현식인 배열은 반환이 가능했던 것이고 문을 사용한 나의 코드는 삼항연산자로 반환이 안된다는 것!
+    
+              그러니까 for ~ else 문을 사용해야한다!
+
