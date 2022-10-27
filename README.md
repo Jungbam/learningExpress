@@ -66,3 +66,5 @@ Express 공부해서 custom 서버 만들기
       ★ 여기서 등장 : Next.js =>처음에 제대로된 index.html을 내려받고 페이지 변환시 CSR처럼 실행
       
       ★ 리액트를 사용하는 이유 : https://babycoder05.tistory.com/entry/%EB%A6%AC%EC%95%A1%ED%8A%B8%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%98%EB%8A%94-%EC%9D%B4%EC%9C%A0-SPA-CSR-SSR
+
+  - 템플릿 엔진 : 지정된 템플릿 양식과 데이터가 합쳐져 HTML 문서를 출력하는 소프트웨어 ☞ 참고 : https://velog.io/@hi_potato/Template-Engine-Template-Engine
