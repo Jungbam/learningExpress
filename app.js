@@ -71,10 +71,28 @@ app.get('/restaurants', function (req, res) {
 })
 
 // get() 안에 동적인 url값을 할당하기 => 동적인 페이지 변환
+// URL에 :을 추가하면 동적경로 생성
 app.get('/restaurants/:id', function (req, res) {
   // url에서 : 뒤에 적은 값들이 들어감.
-  const restaurant = req.body
-  res.render('restaurant-detail', { rid: restaurant })
+  const filePath = path.join(__dirname, 'data', 'restaurants.json')
+
+  const fileData = fs.readFileSync(filePath)
+  const storedRestaurants = JSON.parse(fileData)
+  const restaurant = req.params.id
+  /* for( const restaurant of storedRestaurants){
+    if(restaurant.id === restaurant){
+      return res.render('restaurant-detail', {restaurant})
+    }
+  }
+   */
+  const result = storedRestaurants.filter((el) => {
+    return el.id == restaurant
+  })
+  if (result.length !== 0) {
+    res.render('restaurant-detail', { restaurant: result[0] })
+  } else {
+    res.render('404')
+  }
 })
 
 // 특정포트에서 들어오는 네트워크 트래픽을 감지하게 됨.

@@ -1,0 +1,19 @@
+<!-- 404오류 처리 페이지 -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('includes/head') %> 
+  </head>
+  <body>
+    <!--일부 html 렌더링하는 기능 : include(a,b) a는 넘기는 ejs 파일 / b는 넘기고 싶은 동적인 값인데 props같은 개념.-->
+    <%- include('includes/header') %> 
+    <%- include('includes/aside') %> 
+    <main>
+      <section class="box-container">
+        <h1>해당 음식점을 찾을 수 없습니다.</h1>
+      </section>
+    </main>
+    <%- include('includes/footer') %> 
+  </body>
+</html>

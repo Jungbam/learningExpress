@@ -8,10 +8,11 @@
     <%- include('includes/header') %> 
     <%- include('includes/aside') %> 
     <main>
-      <h1>음식점 이름 : <%=rid%></h1>
-      <p>도시 | 주소</p>
-      <p>설명</p>
-      <p><a href="">음식점 사이트</a></p>
+      <h1>음식점 이름 : <%=restaurant.name%></h1>
+      <p>도시 : <%=restaurant.cuisine%></p>
+      <p>주소 : <%=restaurant.address%></p>
+      <p>설명 : <%=restaurant.description%></p>
+      <p><a href=<%=restaurant.website%>>음식점 사이트</a></p>
     </main>
     <%- include('includes/footer') %> 
   </body>
