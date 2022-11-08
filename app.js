@@ -1,8 +1,10 @@
 const path = require('path')
 const fs = require('fs')
 const express = require('express')
+
 const uuid = require('uuid')
-console.log(uuid.v4)
+
+const resData = require('./util/restaurant-data')
 
 // app을 express 기반 객체로 만듬. -> express 내에 있는 함수들을 사용이 가능해짐.
 const app = express()
@@ -41,14 +43,11 @@ app.post('/recommend', function (req, res) {
   // json 파일에 입력받을 배열이 있는지 확인 필요!!
   const restaurant = req.body
   restaurant.id = uuid.v4()
-  const filePath = path.join(__dirname, 'data', 'restaurants.json')
+  const restaurants = resData.getStoredRestaurants()
 
-  const fileData = fs.readFileSync(filePath)
-  const storedRestaurants = JSON.parse(fileData)
+  restaurants.push(restaurant)
+  resData.storedRestaurants(restaurants)
 
-  storedRestaurants.push(restaurant)
-  fs.writeFileSync(filePath, JSON.stringify(storedRestaurants))
-  // 리디렉션하기
   res.redirect('/confirm')
 })
 
@@ -59,10 +58,7 @@ app.get('/recommend', function (req, res) {
   res.render('recommend')
 })
 app.get('/restaurants', function (req, res) {
-  const filePath = path.join(__dirname, 'data', 'restaurants.json')
-
-  const fileData = fs.readFileSync(filePath)
-  const storedRestaurants = JSON.parse(fileData)
+  const storedRestaurants = resData.getStoredRestaurants()
   // ejs 문법으로 동적인 값 전달하기
   res.render('restaurants', {
     restaurantsNum: storedRestaurants.length,
@@ -74,10 +70,7 @@ app.get('/restaurants', function (req, res) {
 // URL에 :을 추가하면 동적경로 생성
 app.get('/restaurants/:id', function (req, res) {
   // url에서 : 뒤에 적은 값들이 들어감.
-  const filePath = path.join(__dirname, 'data', 'restaurants.json')
-
-  const fileData = fs.readFileSync(filePath)
-  const storedRestaurants = JSON.parse(fileData)
+  const storedRestaurants = resData.getStoredRestaurants()
   const restaurant = req.params.id
   /* for( const restaurant of storedRestaurants){
     if(restaurant.id === restaurant){
@@ -91,8 +84,18 @@ app.get('/restaurants/:id', function (req, res) {
   if (result.length !== 0) {
     res.render('restaurant-detail', { restaurant: result[0] })
   } else {
-    res.render('404')
+    res.status(404).render('404', { what: '음식점' })
   }
+})
+
+// 위에 코드에서 실행되지 않고 남은 모든 경로를 처리
+app.use(function (req, res) {
+  res.status(404).render('404', { what: '페이지' })
+})
+
+// 서버 문제를 처리할 미들웨어
+app.use(function (error, req, res, next) {
+  res.status(500).render('500')
 })
 
 // 특정포트에서 들어오는 네트워크 트래픽을 감지하게 됨.
