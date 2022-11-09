@@ -23,11 +23,33 @@ router.get('/recommend', function (req, res) {
   res.render('recommend')
 })
 router.get('/restaurants', function (req, res) {
+  let order = req.query.order
+  console.log(order)
+  let nextOrder = 'asc'
+  let nextMent = '오름차순'
+
+  if (order === 'asc') {
+    nextOrder = 'desc'
+    nextMent = '내림차순'
+  }
   const storedRestaurants = resData.getStoredRestaurants()
-  // ejs 문법으로 동적인 값 전달하기
+  // 이름별 정렬
+  storedRestaurants.sort(function (resA, resB) {
+    if (
+      (order === 'asc' && resA.name > resB.name) ||
+      (order === 'desc' && resB.name > resA.name)
+    ) {
+      return 1
+    } else {
+      return -1
+    }
+  })
+
   res.render('restaurants', {
     restaurantsNum: storedRestaurants.length,
     restaurants: storedRestaurants,
+    nextOrder: nextOrder,
+    nextMent: nextMent,
   })
 })
 

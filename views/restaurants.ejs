@@ -18,6 +18,10 @@
           <p>혹시 당신의 인생맛집을 찾을지도 몰라요. Look that!</p>
           <!--ejs 문법으로 동적인 값 전달하기-->
           <p>등록된 전국 맛집 갯수 : <%= restaurantsNum %></p>
+          <form action="/restaurants" method="get">
+            <input type="hidden" value="<%=nextOrder%>" name="order"/>
+            <button class="btn"><%=nextMent%>정렬</button>
+          </form>
           <ul id="restaurants-list">
             <% for ( const restaurant of restaurants){ %>
               <!--ejs 문법으로 props 보내주기-->
